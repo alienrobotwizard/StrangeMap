@@ -8,11 +8,11 @@ def henon_map
   y = 0.189406343
   
   steps.times do
+    x_old = x
     x = y + 1 - a*x*x
-    y = b*x
+    y = b*x_old
     print x.to_s << "\t" << y.to_s << "\n"
   end
-  
 end
 
 henon_map
