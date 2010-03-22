@@ -11,7 +11,7 @@ def henon_map
     x_old = x
     x = y + 1 - a*x*x
     y = b*x_old
-    print x.to_s << "\t" << y.to_s << "\n"
+    puts [x,y].join("\t") + "\n"
   end
 end
 

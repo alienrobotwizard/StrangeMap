@@ -3,7 +3,7 @@
 def ikeda_map
   steps = 100000
   u = 0.9
-  
+
   x = 0.0
   y = 0.0
 
@@ -12,7 +12,7 @@ def ikeda_map
     t = 0.4 - 6/(1 + x*x + y*y)
     x = 1 + u*( x*Math.cos(t) - y*Math.sin(t) )
     y = u*( x_old*Math.sin(t) + y*Math.cos(t) )
-    print x.to_s << "\t" << y.to_s << "\t" << t.to_s << "\n"    
+    puts [x,y,t].join("\t") + "\n"
   end
 end
 
