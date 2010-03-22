@@ -1,0 +1,3 @@
+Try to be more concise. Abstract redundant methods, etc.
+For example, all the maps but the quadratic map are identical
+but for the dimension and the iterative rule. Abstract this?
