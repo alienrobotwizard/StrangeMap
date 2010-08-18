@@ -3,13 +3,20 @@
 require 'rubygems'
 require 'gnuplot'
 
+# Canonical henon map, dude.
+
 #
 # Generate points from the henon map starting at
 # coordinates (x,y) and stepping forward n iterations
 #
 def henon_map n, x, y, &blk
-  a, b = [1.4, 0.3] # parameters defining how the map behaves
-  n.times{x_n = x; yield [x = y + 1 - a*x*x, y = b*x_n]}
+  xn = [x,y]
+  n.times{ yield xn = henon(*xn) }
+end
+
+# one step
+def henon(x,y)
+  [y + 1 - 1.4*x*x, 0.3*x]
 end
 
 #
