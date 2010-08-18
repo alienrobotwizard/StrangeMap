@@ -17,10 +17,8 @@ end
 #
 Gnuplot.open do |gp|
   Gnuplot::Plot.new(gp) do |plot|
-    map = []
-    henon_map(10000, 0.631354477, 0.189406343){|pt| map << pt}
-    plot.data << Gnuplot::DataSet.new([map.transpose.first, map.transpose.last]) do |ds|
-      ds.with  = "points"
+    plot.data << Gnuplot::DataSet.new([]) do |ds|
+      henon_map(10000, 0.631354477, 0.189406343){|pt| ds.data << pt.join("\t")}
     end
   end
 end
